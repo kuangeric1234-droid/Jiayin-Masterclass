@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jiayin Masterclass — An Academy of Classical Ballet, Melbourne</title>
+<title>Jiayin Masterclass · An Academy of Classical Ballet, Melbourne</title>
 <meta name="description" content="Classical ballet in the Vaganova tradition, examined by the Royal Academy of Dance, led by faculty formed at The Australian Ballet. Melbourne.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩰</text></svg>">
 <style>
@@ -63,19 +63,18 @@ a:focus-visible{outline:2px solid var(--gold-lt); outline-offset:4px}
   position:absolute; top:0; left:0; right:0; z-index:6; color:var(--ivory-ink);
   background:linear-gradient(rgba(16,10,14,.5), transparent);
 }
-.top .shell{display:flex; align-items:center; justify-content:space-between; padding-top:26px; padding-bottom:26px}
-.wordmark{font:600 12.5px/1.3 "Hanken Grotesk",sans-serif; letter-spacing:.3em; text-transform:uppercase}
-.wordmark small{display:block; font-size:8px; letter-spacing:.4em; color:var(--gold-lt); margin-top:5px}
+.top .shell{display:flex; align-items:center; justify-content:space-between; padding-top:17px; padding-bottom:17px}
+.brand{border:0}
+.brand .logo{height:44px; width:auto; display:block; filter:drop-shadow(0 1px 8px rgba(16,10,14,.5))}
 .top nav{display:flex; gap:30px; align-items:center}
 .top nav a{font:600 10px/1 "Hanken Grotesk",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--ivory-soft); padding-bottom:4px; border-bottom:1px solid transparent; transition:color .3s, border-color .3s}
 .top nav a:hover{color:var(--ivory-ink); border-color:var(--gold-lt)}
-.top nav .zh{color:var(--gold-lt)}
 .top nav .enq{color:var(--ivory-ink); border:1px solid var(--hair-d); padding:11px 18px}
 .top nav .enq:hover{border-color:var(--gold-lt)}
 @media (max-width:900px){ .top nav a:not(.enq){display:none} }
 
 /* ================= HERO ================= */
-.hero{position:relative; height:100svh; min-height:620px; overflow:hidden; background:var(--noir); color:var(--ivory-ink)}
+.hero{position:relative; min-height:100dvh; overflow:hidden; background:var(--noir); color:var(--ivory-ink)}
 .hero img{position:absolute; inset:0; animation:heroin 2.8s cubic-bezier(.2,.5,.2,1) both}
 @keyframes heroin{from{transform:scale(1.06)} to{transform:scale(1)}}
 .hero .scrim{position:absolute; inset:0; background:
@@ -124,9 +123,9 @@ h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 .steps{display:grid; grid-template-columns:1fr 1fr; gap:0 clamp(30px,4vw,70px); list-style:none; margin:44px 0 0; padding:0}
 @media (max-width:760px){ .steps{grid-template-columns:1fr} }
 .steps li{display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:baseline; padding:17px 2px; border-top:1px solid var(--hair-l); margin:0}
-.steps .n{font:600 10px/1 "Hanken Grotesk",sans-serif; letter-spacing:.14em; color:var(--gold)}
+.steps .n{font:600 10px/1 "Hanken Grotesk",sans-serif; letter-spacing:.14em; color:var(--gold); font-variant-numeric:tabular-nums}
 .steps .nm{font-weight:600; font-size:14.5px}
-.steps .age{font:400 12px/1.4 "Hanken Grotesk",sans-serif; letter-spacing:.06em; color:var(--plum-soft); white-space:nowrap}
+.steps .age{font:400 12px/1.4 "Hanken Grotesk",sans-serif; letter-spacing:.06em; color:var(--plum-soft); white-space:nowrap; font-variant-numeric:tabular-nums}
 
 /* programs */
 .prog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.6vw,34px); margin-top:54px}
@@ -170,8 +169,8 @@ h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 /* footer */
 footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 .f-grid{display:flex; justify-content:space-between; gap:44px; flex-wrap:wrap; align-items:flex-start}
-.f-brand .wordmark{color:var(--ivory-ink)}
-.f-brand .zh-name{margin-top:13px; font-size:12.5px; letter-spacing:.3em; color:var(--gold-lt)}
+.f-brand .logo{height:52px; width:auto; display:block}
+.f-brand .f-tag{margin-top:14px; font:600 9px/1 "Hanken Grotesk",sans-serif; letter-spacing:.32em; text-transform:uppercase; color:var(--gold-lt)}
 .f-col{font-size:13.5px; line-height:2.1}
 .f-col b{display:block; font:600 9.5px/1 "Hanken Grotesk",sans-serif; letter-spacing:.24em; text-transform:uppercase; color:var(--gold-lt); margin-bottom:14px}
 .f-col a{border-bottom:1px solid var(--hair-d); transition:color .3s, border-color .3s}
@@ -184,12 +183,11 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 
 <header class="top">
   <div class="shell">
-    <div class="wordmark">Jiayin Masterclass<small>Classical Ballet · Melbourne</small></div>
+    <a href="/" class="brand" aria-label="Jiayin Masterclass home"><img class="logo" src="assets/logo-full-colour.png" alt="Jiayin Masterclass 杜佳音芭蕾舞大师班"></a>
     <nav aria-label="Main">
-      <a href="#academy">The Academy</a>
-      <a href="#pathway">Training</a>
-      <a href="#faculty">Faculty</a>
-      <a class="zh" href="#" title="Chinese site — coming soon">中文</a>
+      <a href="#academy">About</a>
+      <a href="#pathway">Curriculum</a>
+      <a href="#faculty">Our People</a>
       <a class="enq" href="#admissions">Enquire</a>
     </nav>
   </div>
@@ -199,14 +197,14 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 <div class="hero dark">
   <img src="assets/hero-barre.jpg" alt="Jiayin Masterclass dancers at the barre in stage light">
   <div class="scrim" aria-hidden="true"></div>
-  <div class="credit">Photography — Simon C</div>
+  <div class="credit">Photography · Simon C</div>
   <div class="hcon">
     <div class="shell">
-      <p class="kicker">An Academy of Classical Ballet — Melbourne</p>
+      <p class="kicker">An Academy of Classical Ballet · Melbourne</p>
       <h1>The quiet shaping of excellence.</h1>
       <p class="hsub">Vaganova Method · RAD Examinations · Est. 2011</p>
       <div class="hcta">
-        <a class="btn" href="#admissions">Enquire for Admission</a>
+        <a class="btn" href="#admissions">How Admission Works</a>
         <a class="tlink" href="#pathway">The Curriculum</a>
       </div>
     </div>
@@ -225,14 +223,15 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 
 <!-- ================= INTRO ================= -->
 <section id="academy">
-  <div class="shell grid">
-    <div class="c1-7 rv">
-      <p class="kicker">The Academy</p>
-      <p class="statement">Training in the Vaganova tradition, examined by the Royal Academy of Dance — led by faculty formed at The Australian Ballet.</p>
-    </div>
-    <div class="c8-12 body rv" style="transition-delay:.15s; align-self:end">
-      <p class="lead">Jiayin Masterclass trains dancers the way the great schools always have: slowly, systematically, and with absolute attention to detail.</p>
-      <p class="muted">Founded in 2011 by Jiayin Du, formerly of The Australian Ballet and for seven years a classical teacher at The Australian Ballet School.</p>
+  <div class="shell">
+    <p class="statement rv" style="max-width:26em">Training in the Vaganova tradition, examined by the Royal Academy of Dance, led by faculty formed at The Australian Ballet.</p>
+    <div class="grid" style="margin-top:44px">
+      <div class="c1-6 body rv" style="transition-delay:.1s">
+        <p class="lead">Jiayin Masterclass trains dancers the way the great schools always have: slowly, systematically, and with absolute attention to detail.</p>
+      </div>
+      <div class="c7-12 body rv" style="transition-delay:.2s">
+        <p class="muted">Founded in 2011 by Jiayin Du, formerly of The Australian Ballet and for seven years a classical teacher at The Australian Ballet School.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -242,14 +241,12 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
   <div class="shell grid">
     <div class="c1-5 rv">
       <div class="ph"><img src="assets/port-de-bras.jpg" alt="A teacher shaping a young student's port de bras in the studio" loading="lazy"></div>
-      <p class="cap">The studio — port de bras</p>
     </div>
     <div class="c6-12 tx rv" style="transition-delay:.12s">
-      <p class="kicker">The Formation</p>
       <h2 class="sec-t">One enrolment. One year of formation.</h2>
       <div class="body" style="margin-top:20px">
         <p>One annual enrolment encompasses the complete curriculum: technique, pointe, character, conditioning and examination preparation, planned across the year as a single body of work.</p>
-        <p class="muted">There are no casual classes and no shortcuts. There is a method, and there is time — with a scientific approach to health and injury prevention at every level.</p>
+        <p class="muted">There are no casual classes and no shortcuts. There is a method, and there is time. A scientific approach to health and injury prevention underpins every level.</p>
       </div>
       <a class="tlink" href="#pathway" style="margin-top:10px; display:inline-block">The Pathway</a>
     </div>
@@ -259,14 +256,9 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 <!-- ================= PATHWAY ================= -->
 <section id="pathway" class="pathway">
   <div class="shell">
-    <div class="grid">
-      <div class="c1-6 rv">
-        <p class="kicker">The Pathway</p>
-        <h2 class="sec-t">From first plié to the professional stage.</h2>
-      </div>
-      <div class="c7-12 body rv" style="align-self:end; transition-delay:.12s">
-        <p class="muted">Eight levels, each with its own examination and its own purpose — placement is decided by the faculty, not by age alone.</p>
-      </div>
+    <div class="rv">
+      <h2 class="sec-t" style="max-width:15em">From first plié to the professional stage.</h2>
+      <p class="muted" style="max-width:52ch; margin-top:16px">Eight levels, each with its own examination and its own purpose. Placement is decided by the faculty, not by age alone.</p>
     </div>
     <ol class="steps">
       <li class="rv"><span class="n">01</span><span class="nm">Pre-Primary Ballet</span><span class="age">Age 5</span></li>
@@ -284,18 +276,15 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
 <!-- ================= PROGRAMS ================= -->
 <section>
   <div class="shell">
-    <div class="grid">
-      <div class="c1-7 rv">
-        <p class="kicker">The Programs</p>
-        <h2 class="sec-t">Three ways through the school.</h2>
-      </div>
+    <div class="rv">
+      <h2 class="sec-t">Three ways through the school.</h2>
     </div>
     <div class="prog-grid">
       <div class="prog rv">
         <div class="ph"><img src="assets/program-regular.jpg" alt="Students of the regular curriculum in the studio" loading="lazy"></div>
         <div class="tag">Ages 5–18</div>
         <h3>The Regular Curriculum</h3>
-        <p>Age-graded afterschool training to international standard — the formation on which everything else is built.</p>
+        <p>Age-graded afterschool training to international standard: the formation on which everything else is built.</p>
         <a class="tlink" href="#admissions">Discover</a>
       </div>
       <div class="prog rv" style="transition-delay:.12s">
@@ -309,7 +298,7 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
         <div class="ph"><img src="assets/program-vce.jpg" alt="Contemporary repertoire in performance" loading="lazy"></div>
         <div class="tag">VET · VCE Dance</div>
         <h3>Vocational &amp; VCE</h3>
-        <p>For students whose future is the stage — a pre-professional stream with VET and VCE Dance included.</p>
+        <p>For students whose future is the stage: a pre-professional stream with VET and VCE Dance included.</p>
         <a class="tlink" href="#admissions">Discover</a>
       </div>
     </div>
@@ -332,13 +321,12 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
   <div class="shell grid">
     <div class="c1-4 rv">
       <div class="ph"><img src="assets/jiayin-du.jpg" alt="Jiayin Du, founder and artistic director" loading="lazy"></div>
-      <p class="cap">Jiayin Du — Founder &amp; Artistic Director</p>
+      <p class="cap">Jiayin Du · Founder &amp; Artistic Director</p>
     </div>
     <div class="c5-12 tx rv" style="transition-delay:.12s">
-      <p class="kicker">The Faculty</p>
       <h2 class="sec-t">Nine teachers. One method.</h2>
       <div class="body">
-        <p class="lead">The school is led by founder Jiayin Du — a former dancer with The Australian Ballet and, for seven years, classical teacher at The Australian Ballet School.</p>
+        <p class="lead">The school is led by founder Jiayin Du, a former dancer with The Australian Ballet and, for seven years, classical teacher at The Australian Ballet School.</p>
         <p class="muted">Around him: Vaganova-qualified pedagogues, RAD examination specialists, working choreographers and dancers formed on the world's stages.</p>
       </div>
       <ul class="names">
@@ -365,7 +353,7 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
       <p style="margin-top:18px; max-width:52ch">The school accepts a limited number of students each year, throughout the year. There are no trial classes; there is a conversation, a tour, and a class with the faculty.</p>
       <ol class="adm-steps">
         <li class="rv"><span class="n">01</span><div><b>Enquiry</b><span>A conversation about your child, your hopes, and the school.</span></div></li>
-        <li class="rv"><span class="n">02</span><div><b>Studio Tour</b><span>By appointment — see the studios, meet the school.</span></div></li>
+        <li class="rv"><span class="n">02</span><div><b>Studio Tour</b><span>By appointment. See the studios, meet the school.</span></div></li>
         <li class="rv"><span class="n">03</span><div><b>Placement Class</b><span>The faculty meets your dancer and advises the level.</span></div></li>
         <li class="rv"><span class="n">04</span><div><b>Offer</b><span>A place in the formation, enrolled for the year.</span></div></li>
       </ol>
@@ -373,7 +361,6 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
     </div>
     <div class="c8-12 rv" style="transition-delay:.12s">
       <div class="ph"><img src="assets/admissions-barre.jpg" alt="Dancers at the barre before performance" loading="lazy"></div>
-      <p class="cap">Before curtain — the barre</p>
     </div>
   </div>
 </section>
@@ -383,8 +370,8 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
   <div class="shell">
     <div class="f-grid">
       <div class="f-brand">
-        <div class="wordmark">Jiayin Masterclass<small>Classical Ballet · Melbourne</small></div>
-        <div class="zh-name">杜佳音芭蕾舞大师班</div>
+        <img class="logo" src="assets/logo-full-colour.png" alt="Jiayin Masterclass 杜佳音芭蕾舞大师班">
+        <div class="f-tag">Classical Ballet · Melbourne</div>
       </div>
       <div class="f-col">
         <b>Enquiries</b>
@@ -398,8 +385,9 @@ footer{background:var(--noir); color:var(--ivory-soft); padding:84px 0 44px}
       </div>
       <div class="f-col">
         <b>The School</b>
-        <a href="#academy">The Academy</a><br>
-        <a href="#pathway">Training</a><br>
+        <a href="#academy">About</a><br>
+        <a href="#pathway">Curriculum</a><br>
+        <a href="#faculty">Our People</a><br>
         <a href="#admissions">Admissions</a>
       </div>
     </div>
