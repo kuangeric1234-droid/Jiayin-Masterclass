@@ -89,19 +89,22 @@ a:focus-visible{outline:2px solid var(--gold-lt); outline-offset:4px}
 .hero .hcon .shell{padding-bottom:clamp(48px,7vh,84px)}
 .hero .hcon > .shell > *{animation:hrise 1.1s cubic-bezier(.2,.6,.2,1) both}
 .hero .kicker{color:var(--gold-lt); animation-delay:.5s}
-.hero h1{font-size:clamp(42px,6.2vw,78px); line-height:1.05; max-width:12em; animation-delay:.65s}
+.hero h1{font-size:clamp(44px,7vw,94px); line-height:1.0; animation-delay:.65s}
+.hero h1 span{display:block}
+.hero h1 .l2{margin-left:clamp(44px,11vw,168px)}
 .hero .hsub{margin:22px 0 0; font:600 10.5px/1.9 "Hanken Grotesk",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--ivory-soft); animation-delay:.85s}
 .hero .hcta{margin-top:34px; display:flex; gap:30px; align-items:center; flex-wrap:wrap; animation-delay:1s}
 .hero .tlink{color:var(--ivory-soft)}
 .hero .tlink:hover{color:var(--ivory-ink)}
 @keyframes hrise{from{opacity:0; transform:translateY(24px)} to{opacity:1; transform:none}}
 
-/* ================= LINEAGE ================= */
-.lineage{border-bottom:1px solid var(--hair-l); background:var(--ivory)}
-.lineage .shell{display:flex; flex-wrap:wrap; gap:10px 0; align-items:center; padding-top:22px; padding-bottom:22px}
-.lineage span{font:600 10px/1.6 "Hanken Grotesk",sans-serif; letter-spacing:.18em; text-transform:uppercase; color:var(--plum-soft)}
-.lineage i{color:var(--gold); font-style:normal; padding:0 16px}
-@media (max-width:720px){ .lineage i{padding:0 10px} }
+/* ================= LINEAGE MARQUEE ================= */
+.lineage{border-bottom:1px solid var(--hair-l); background:var(--ivory); overflow:hidden; display:flex}
+.mt{display:flex; align-items:center; flex-shrink:0; padding:24px 0; animation:marq 34s linear infinite}
+.mt span{font:600 10px/1.6 "Hanken Grotesk",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--plum-soft); white-space:nowrap}
+.mt i{color:var(--gold); font-style:normal; padding:0 26px}
+@keyframes marq{to{transform:translateX(-100%)}}
+@media (prefers-reduced-motion: reduce){ .mt{animation:none} }
 
 /* ================= LAYOUT BLOCKS ================= */
 section{padding:118px 0; background:var(--ivory)}
@@ -109,7 +112,9 @@ section{padding:118px 0; background:var(--ivory)}
 .c1-7{grid-column:1/8} .c8-12{grid-column:8/13} .c1-5{grid-column:1/6} .c6-12{grid-column:6/13} .c1-6{grid-column:1/7} .c7-12{grid-column:7/13} .c1-4{grid-column:1/5} .c5-12{grid-column:5/13}
 @media (max-width:880px){ .grid > *{grid-column:1/13 !important} }
 
-.statement{font-family:"Bodoni Moda",Georgia,serif; font-size:clamp(26px,3.4vw,40px); line-height:1.3; text-wrap:balance; margin:0}
+.statement{font-family:"Bodoni Moda",Georgia,serif; font-size:clamp(27px,3.6vw,44px); line-height:1.28; margin:0; text-indent:clamp(52px,9vw,132px)}
+.drop{margin-top:84px}
+@media (max-width:880px){ .drop{margin-top:0} }
 h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 .body p{max-width:54ch}
 .body .lead{font-size:17.5px}
@@ -119,21 +124,28 @@ h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 .formation{padding-top:0}
 .formation .ph{aspect-ratio:4/5; background:var(--rose)}
 .formation .tx{align-self:center; max-width:520px}
-@media (max-width:880px){ .formation .tx{max-width:none; margin-top:8px} }
+.ph-mini{width:46%; height:auto; margin:-92px 18px 0 auto; position:relative; border:8px solid var(--ivory); display:block}
+@media (max-width:880px){ .formation .tx{max-width:none; margin-top:8px} .ph-mini{width:54%; margin-top:-52px} }
 
 /* pathway */
 .pathway{background:var(--ivory2); border-top:1px solid var(--hair-l); border-bottom:1px solid var(--hair-l)}
 .steps{display:grid; grid-template-columns:1fr 1fr; gap:0 clamp(30px,4vw,70px); list-style:none; margin:44px 0 0; padding:0}
 @media (max-width:760px){ .steps{grid-template-columns:1fr} }
-.steps li{display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:baseline; padding:17px 2px; border-top:1px solid var(--hair-l); margin:0}
+.steps li{display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:baseline; padding:21px 2px; border-top:1px solid var(--hair-l); margin:0}
 .steps .n{font:600 10px/1 "Hanken Grotesk",sans-serif; letter-spacing:.14em; color:var(--gold); font-variant-numeric:tabular-nums}
-.steps .nm{font-weight:600; font-size:14.5px}
+.steps .nm{font-family:"Bodoni Moda",Georgia,serif; font-weight:400; font-size:20px; line-height:1.2}
 .steps .age{font:400 12px/1.4 "Hanken Grotesk",sans-serif; letter-spacing:.06em; color:var(--plum-soft); white-space:nowrap; font-variant-numeric:tabular-nums}
 
 /* programs */
-.prog-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(18px,2.6vw,34px); margin-top:54px}
-@media (max-width:880px){ .prog-grid{grid-template-columns:1fr} }
-.prog .ph{aspect-ratio:4/5; overflow:hidden; background:var(--rose)}
+.prog-grid{display:grid; grid-template-columns:repeat(12,1fr); gap:clamp(18px,2.6vw,34px); margin-top:54px}
+.prog.p1{grid-column:1/6}
+.prog.p2{grid-column:6/10; margin-top:84px}
+.prog.p3{grid-column:10/13; margin-top:168px}
+.prog.p1 .ph{aspect-ratio:4/5}
+.prog.p2 .ph{aspect-ratio:3/4}
+.prog.p3 .ph{aspect-ratio:2/3}
+@media (max-width:880px){ .prog-grid{grid-template-columns:1fr} .prog.p1,.prog.p2,.prog.p3{grid-column:auto; margin-top:0} .prog.p1 .ph,.prog.p2 .ph,.prog.p3 .ph{aspect-ratio:4/5} }
+.prog .ph{overflow:hidden; background:var(--rose)}
 .prog .ph img{transition:transform 1.2s cubic-bezier(.2,.5,.2,1)}
 .prog:hover .ph img{transform:scale(1.035)}
 .prog .tag{font:600 9.5px/1 "Hanken Grotesk",sans-serif; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); margin:20px 0 8px; min-height:10px}
@@ -146,7 +158,8 @@ h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 .band .bg{position:absolute; inset:0}
 .band .bg::after{content:""; position:absolute; inset:0; background:linear-gradient(100deg, rgba(18,11,15,.9) 25%, rgba(18,11,15,.55) 60%, rgba(18,11,15,.35))}
 .band .shell{position:relative; z-index:2; min-height:100dvh; display:flex; flex-direction:column; justify-content:center; padding-top:96px; padding-bottom:96px}
-.band h2{font-size:clamp(30px,4vw,46px); line-height:1.15; max-width:15em}
+.band h2{font-size:clamp(32px,4.6vw,56px); line-height:1.12; max-width:14em}
+.band h2 em{font-style:italic; color:var(--gold-lt); display:inline-block; line-height:1.1; padding-bottom:5px}
 .band p{color:var(--ivory-soft); max-width:44ch; margin-top:16px}
 .band .kicker{color:var(--gold-lt)}
 .band .btn{margin-top:26px}
@@ -155,13 +168,14 @@ h2.sec-t{font-size:clamp(30px,4vw,46px); line-height:1.12}
 .fac .ph{aspect-ratio:3/4; background:var(--rose)}
 .fac .tx{align-self:center}
 .fac h2{margin-bottom:18px}
-.fac .names{columns:2; gap:40px; margin:30px 0 0; padding:0; list-style:none; max-width:460px}
-.fac .names li{font:600 11px/2.5 "Hanken Grotesk",sans-serif; letter-spacing:.16em; text-transform:uppercase; color:var(--plum-soft); border-top:1px solid var(--hair-l); margin:0; break-inside:avoid}
-@media (max-width:560px){ .fac .names{columns:1} }
+.fac h2 em{font-style:italic}
+.names-line{font-family:"Bodoni Moda",Georgia,serif; font-size:19px; line-height:2.05; max-width:54ch; margin:28px 0 0; color:var(--plum)}
+.names-line i{font-style:normal; color:var(--gold); padding:0 13px; font-size:15px}
 
 /* admissions */
 .adm{background:var(--rose); border-top:1px solid var(--hair-l)}
-.adm .ph{aspect-ratio:3/4; background:var(--ivory)}
+.adm .ph{aspect-ratio:3/4; background:var(--ivory); margin-top:-262px}
+@media (max-width:880px){ .adm .ph{margin-top:0} }
 .adm-steps{list-style:none; margin:40px 0 0; padding:0; max-width:520px}
 .adm-steps li{display:grid; grid-template-columns:44px 1fr; gap:14px; padding:16px 0; border-top:1px solid rgba(42,32,38,.2); margin:0}
 .adm-steps .n{font:600 10px/1.9 "Hanken Grotesk",sans-serif; letter-spacing:.14em; color:var(--gold)}
@@ -205,7 +219,7 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
   <div class="hcon">
     <div class="shell">
       <p class="kicker">An Academy of Classical Ballet · Melbourne</p>
-      <h1>The quiet shaping of excellence.</h1>
+      <h1><span class="l1">The quiet shaping</span> <span class="l2">of excellence.</span></h1>
       <p class="hsub">Vaganova Method · RAD Examinations · Est. 2011</p>
       <div class="hcta">
         <a class="btn" href="#admissions">How Admission Works</a>
@@ -217,24 +231,30 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
 
 <main class="page">
 <!-- ================= LINEAGE ================= -->
-<div class="lineage">
-  <div class="shell">
+<div class="lineage" aria-label="The Vaganova Method, Royal Academy of Dance Examinations, The Australian Ballet lineage, VCE and Vocational Pathways">
+  <div class="mt">
     <span>The Vaganova Method</span><i>·</i>
     <span>Royal Academy of Dance Examinations</span><i>·</i>
     <span>The Australian Ballet Lineage</span><i>·</i>
-    <span>VCE &amp; Vocational Pathways</span>
+    <span>VCE &amp; Vocational Pathways</span><i>·</i>
+  </div>
+  <div class="mt" aria-hidden="true">
+    <span>The Vaganova Method</span><i>·</i>
+    <span>Royal Academy of Dance Examinations</span><i>·</i>
+    <span>The Australian Ballet Lineage</span><i>·</i>
+    <span>VCE &amp; Vocational Pathways</span><i>·</i>
   </div>
 </div>
 
 <!-- ================= INTRO ================= -->
 <section id="academy">
   <div class="shell">
-    <p class="statement rv" style="max-width:26em">Training in the Vaganova tradition, examined by the Royal Academy of Dance, led by faculty formed at The Australian Ballet.</p>
-    <div class="grid" style="margin-top:44px">
-      <div class="c1-6 body rv" style="transition-delay:.1s">
+    <p class="statement rv" style="max-width:27em">Training in the Vaganova tradition, examined by the Royal Academy of Dance, led by faculty formed at The Australian Ballet.</p>
+    <div class="grid" style="margin-top:52px">
+      <div class="c1-5 body rv" style="transition-delay:.1s">
         <p class="lead">Jiayin Masterclass trains dancers the way the great schools always have: slowly, systematically, and with absolute attention to detail.</p>
       </div>
-      <div class="c7-12 body rv" style="transition-delay:.2s">
+      <div class="c8-12 body rv drop" style="transition-delay:.2s">
         <p class="muted">Founded in 2011 by Jiayin Du, formerly of The Australian Ballet and for seven years a classical teacher at The Australian Ballet School.</p>
       </div>
     </div>
@@ -244,10 +264,11 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
 <!-- ================= FORMATION ================= -->
 <section class="formation">
   <div class="shell grid">
-    <div class="c1-5 rv">
+    <div class="c1-6 rv">
       <div class="ph"><img src="assets/port-de-bras.jpg" alt="A teacher shaping a young student's port de bras in the studio" loading="lazy"></div>
+      <img class="ph-mini" src="assets/studio-floor.jpg" alt="A quiet moment on the studio floor between exercises" loading="lazy">
     </div>
-    <div class="c6-12 tx rv" style="transition-delay:.12s">
+    <div class="c8-12 tx rv" style="transition-delay:.12s">
       <h2 class="sec-t">One enrolment. One year of formation.</h2>
       <div class="body" style="margin-top:20px">
         <p>One annual enrolment encompasses the complete curriculum: technique, pointe, character, conditioning and examination preparation, planned across the year as a single body of work.</p>
@@ -285,21 +306,21 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
       <h2 class="sec-t">Three ways through the school.</h2>
     </div>
     <div class="prog-grid">
-      <div class="prog rv">
+      <div class="prog p1 rv">
         <div class="ph"><img src="assets/program-regular.jpg" alt="Students of the regular curriculum in the studio" loading="lazy"></div>
         <div class="tag">Ages 5–18</div>
         <h3>The Regular Curriculum</h3>
         <p>Age-graded afterschool training to international standard: the formation on which everything else is built.</p>
         <a class="tlink" href="#admissions">Discover</a>
       </div>
-      <div class="prog rv" style="transition-delay:.12s">
+      <div class="prog p2 rv" style="transition-delay:.12s">
         <div class="ph"><img src="assets/program-elite.jpg" alt="A young soloist performing on stage" loading="lazy"></div>
         <div class="tag">By Audition Only</div>
         <h3>Endeavor to Elite</h3>
         <p>An invitation-based program for students of exceptional promise, trained toward national and international competition.</p>
         <a class="tlink" href="#admissions">Discover</a>
       </div>
-      <div class="prog rv" style="transition-delay:.24s">
+      <div class="prog p3 rv" style="transition-delay:.24s">
         <div class="ph"><img src="assets/program-vce.jpg" alt="Contemporary repertoire in performance" loading="lazy"></div>
         <div class="tag">VET · VCE Dance</div>
         <h3>Vocational &amp; VCE</h3>
@@ -315,7 +336,7 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
   <div class="bg"><img src="assets/masterclass-stage.jpg" alt="The corps de ballet on stage in a Jiayin Masterclass performance" loading="lazy"></div>
   <div class="shell rv">
     <p class="kicker">Open Masterclasses</p>
-    <h2>The next masterclass will be announced for Spring 2026.</h2>
+    <h2>The next masterclass will be announced for <em>Spring 2026.</em></h2>
     <p>Open to external students. Places are limited to twenty-four dancers and offered in order of application.</p>
     <a class="btn" href="mailto:admissions@jiayinmasterclass.com?subject=Masterclass%20list">Join the List</a>
   </div>
@@ -329,22 +350,12 @@ footer{position:sticky; bottom:0; z-index:0; background:var(--noir); color:var(-
       <p class="cap">Jiayin Du · Founder &amp; Artistic Director</p>
     </div>
     <div class="c5-12 tx rv" style="transition-delay:.12s">
-      <h2 class="sec-t">Nine teachers. One method.</h2>
+      <h2 class="sec-t">Nine teachers.<br><em>One method.</em></h2>
       <div class="body">
         <p class="lead">The school is led by founder Jiayin Du, a former dancer with The Australian Ballet and, for seven years, classical teacher at The Australian Ballet School.</p>
         <p class="muted">Around him: Vaganova-qualified pedagogues, RAD examination specialists, working choreographers and dancers formed on the world's stages.</p>
       </div>
-      <ul class="names">
-        <li>Jiayin Du</li>
-        <li>Hanna Lazarieva</li>
-        <li>Adam Thurlow</li>
-        <li>Susan Sargison</li>
-        <li>Hiroko Kaneko</li>
-        <li>Isabella Rose Cort</li>
-        <li>Ariane Quellier</li>
-        <li>Andrea Wong</li>
-        <li>Angelbaby Liu</li>
-      </ul>
+      <p class="names-line">Jiayin Du <i>·</i> Hanna Lazarieva <i>·</i> Adam Thurlow <i>·</i> Susan Sargison <i>·</i> Hiroko Kaneko <i>·</i> Isabella Rose Cort <i>·</i> Ariane Quellier <i>·</i> Andrea Wong <i>·</i> Angelbaby Liu</p>
     </div>
   </div>
 </section>
